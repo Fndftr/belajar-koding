@@ -1,7 +1,8 @@
 <?php
 echo "mau kalkulator? ";
 $menu = trim(fgets(STDIN));
-do {
+
+do{
     echo "menu kalkulator \n";
     echo "1. penjumlahan\n";
     echo "2. pengurangan\n";
@@ -32,7 +33,7 @@ do {
     
      echo "lagi? ";
      $menu = trim(fgets(STDIN));
-     }while ($menu == "ya" or "iya" or "yes");
 
+     }while ($menu = "ya" || $menu == "iya" || $menu == "yes")
 
 ?>
