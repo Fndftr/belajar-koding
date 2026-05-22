@@ -12,24 +12,36 @@ task($choice, $array);
 }
 
 function task($choice, $array){
-    switch($choice){
-        case 1:
-            echo "tulis yang mau di tambah\n";
-            $add = trim(fgets(STDIN));
-            array_push($array, $add);
-            pilihan();
-            pilihan();
-            break;
-        case 2:
-            count == 0;
-            foreach ($array as $count){
-                $count++;
-            }
-            echo "tulis yang mau di update";
-            $updatte = trim(fgets(STDIN));
-            $array[count] = "$update";
-    }
-    
+switch ($choice) {
+    case 1:
+        echo "masukan data yang ingin ditambahkan\n";
+        $data = trim(fgets(STDIN));
+        array_push($array, $data);
+        pilihan();
+        break;
+    case 2:
+        echo "masukan data yang ingin dihapus\n";
+        $data = trim(fgets(STDIN));
+        if (($key = array_search($data, $array)) !== false) {
+            unset($array[$key]);
+        }
+        pilihan();
+        break;
+    case 3:
+        echo "masukan data yang ingin diupdate\n";
+        $data = trim(fgets(STDIN));
+        echo "masukan data baru\n";
+        $newData = trim(fgets(STDIN));
+        if (($key = array_search($data, $array)) !== false) {
+            $array[$key] = $newData;
+        }
+        pilihan();
+        break;
+    default:
+        echo "pilihan tidak valid\n";
+        pilihan();
+        break;
+}
 }
 
 
