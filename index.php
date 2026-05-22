@@ -16,29 +16,32 @@ print "Menu kalkulator: \n";
 print "1. Penjumlahan\n";
 print "2. Pengurangan\n";
 
-print "Pilih operasi (1-4): ";
-$choice = trim(fgets(STDIN));
+print "Pilih operasi (1-2): ";
+$choices = trim(fgets(STDIN));
 
-switch ($choice) {
-    case 1:
-        print "masukan angka: ";
-        $a = trim(fgets(STDIN));
-        print "masukan angka : ";
-        $b = trim(fgets(STDIN));
-        $result = $a + $b;
-        print "Hasil penjumlahan: $result\n";
-        break;
-    case 2:
-        print "masukan angka: ";
-        $a = trim(fgets(STDIN));
-        print "masukan angka : ";
-        $b = trim(fgets(STDIN));
-        $result = $a - $b;
-        print "Hasil pengurangan: $result\n";
-        break;
-    default:
-        print "Pilihan tidak valid\n";
-        break;
-    
+miniKalkulator(2);
+
+function miniKalkulator($choice){
+	switch ($choice) {
+	    case 1:
+		 print "masukan angka: ";
+        	$a = trim(fgets(STDIN));
+        	print "masukan angka : ";
+        	$b = trim(fgets(STDIN));
+        	$result = $a + $b;
+        	print "Hasil penjumlahan: $result\n";
+        	break;
+	    case 2:
+        	print "masukan angka: ";
+        	$a = trim(fgets(STDIN));
+        	print "masukan angka : ";
+        	$b = trim(fgets(STDIN));
+        	$result = $a - $b;
+        	print "Hasil pengurangan: $result\n";
+        	break;
+    	    default:
+        	print "Pilihan tidak valid\n";
+                break;
+    	}
 }
 ?>
