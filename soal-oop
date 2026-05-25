@@ -1,0 +1,28 @@
+<?php
+class hewan{
+    public $jenis;
+    public $nyawa;
+    public $kekuatan;
+    
+    function set($jenis, $nyawa, $kekuatan) {
+        $this->jenis = $jenis;
+        $this->nyawa = $nyawa;
+        $this->kekuatan = $kekuatan;
+    }
+    function attack(hewan $target){
+        echo "\n".$this->jenis." menyerang ".$target->jenis;
+        $target->nyawa = $target->nyawa - $this->kekuatan;
+        echo "\nsisa nyawa ".$target->jenis." adalah ". $target->nyawa;
+    }
+ 
+}
+//inisiasi class
+$kucing = new hewan();
+$kucing->set("kucing", 20, 3);
+$tikus = new hewan();
+$tikus->set("tikus", 10, 2);
+//menyerang sampe nyawaa lawan habis
+while($tikus->nyawa >0){
+$kucing->attack($tikus);
+}
+?>
